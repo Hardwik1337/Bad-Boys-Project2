@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<mxfile host="app.diagrams.net" modified="2026-02-25T00:00:00.000Z" agent="python-generated" version="22.1.0" type="device">
+  <diagram name="Use-Case Diagram 1 — Catalog &amp; Official Streaming">
+    <mxGraphModel dx="1220" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="100" value="MovieHub System" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="230" y="60" width="700" height="680" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Guest" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="70" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="310" width="70" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="201" value="UC-01 Browse Movies" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="140" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="202" value="UC-02 Search Movies" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="140" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="203" value="UC-03 Filter Movies" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="235" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="204" value="UC-04 View Movie Details" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="235" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="214" value="UC-14 View Official Providers" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="330" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="215" value="UC-15 Redirect to Provider" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="330" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="216" value="UC-16 Log Redirect Event" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="425" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="1000" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="10" target="201">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1001" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="10" target="202">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1002" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="10" target="203">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1003" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="10" target="204">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1004" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="10" target="214">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1005" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="10" target="215">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1006" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="11" target="201">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1007" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="11" target="202">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1008" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="11" target="203">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1009" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="11" target="204">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1010" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="11" target="214">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1011" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="11" target="215">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1012" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="dashed=1;endArrow=open;endFill=0;html=1;" edge="1" parent="1" source="215" target="216">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

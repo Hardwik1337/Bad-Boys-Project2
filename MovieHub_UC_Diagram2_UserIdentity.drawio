@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<mxfile host="app.diagrams.net" modified="2026-02-25T00:00:00.000Z" agent="python-generated" version="22.1.0" type="device">
+  <diagram name="Use-Case Diagram 2 — User Features &amp; Identity">
+    <mxGraphModel dx="1220" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="100" value="MovieHub System" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="230" y="60" width="700" height="680" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Guest" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="70" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="310" width="70" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="317" value="UC-17 Register Account" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="140" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="318" value="UC-18 Login" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="140" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="319" value="UC-19 Logout" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="235" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="320" value="UC-20 Reset Password" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="235" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="305" value="UC-05 Rate a Movie" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="330" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="306" value="UC-06 Delete Rating" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="330" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="307" value="UC-07 Create Review" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="425" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="308" value="UC-08 Edit/Delete Review" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="425" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="310" value="UC-10 Add to Watchlist" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="520" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="311" value="UC-11 Mark as Watched" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="520" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="312" value="UC-12 Add to Favorites" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="615" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="313" value="UC-13 View Personal Lists" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="615" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="1000" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="20" target="317">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1001" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="20" target="318">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1002" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="20" target="320">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1003" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="21" target="319">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1004" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="21" target="320">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1005" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="21" target="305">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1006" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="21" target="306">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1007" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="21" target="307">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1008" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="21" target="308">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1009" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="21" target="310">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1010" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="21" target="311">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1011" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="21" target="312">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="1012" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="21" target="313">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
