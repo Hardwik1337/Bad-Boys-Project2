@@ -1,7 +1,7 @@
 # Bad-Boys-Project2
 Tonizzo Simoe, Pryadko Andrii & Syrota Denys Project
 
-MovieHub — Movie Rating & Official Streaming Links
+MovieHub - Movie Rating & Official Streaming Links
 
 
 MovieHub is a web application built with ASP .NET Core MVC that allows users to browse a movie catalog, add movies to personal lists (Watchlist, Watched, Favorites), rate movies, and write reviews.
