@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<mxfile host="app.diagrams.net" modified="2026-02-25T00:00:00.000Z" agent="python-generated" version="22.1.0" type="device">
+  <diagram name="MovieHub — Sequence Diagram (UC-05 Rate a Movie)">
+    <mxGraphModel dx="1220" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="10" value="User" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="120" height="640" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="MovieController" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="240" y="80" width="160" height="640" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="RatingService" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="450" y="80" width="150" height="640" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="RatingRepository" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="170" height="640" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="DbContext / Database" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="860" y="80" width="220" height="640" as="geometry"/>
+        </mxCell>
+        <mxCell id="99" value="UC-05: Rate a Movie
+Main Success Scenario" style="shape=note;whiteSpace=wrap;html=1;size=18;fillColor=#fff2cc;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="20" width="320" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="200" value="1. POST /movies/{id}/rate(value)" style="endArrow=open;endFill=0;html=1;strokeWidth=2;" edge="1" parent="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="201" value="2. RateMovie(userId, movieId, value)" style="endArrow=open;endFill=0;html=1;strokeWidth=2;" edge="1" parent="1" source="11" target="12">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="202" value="3. GetByUserAndMovie(userId, movieId)" style="endArrow=open;endFill=0;html=1;strokeWidth=2;" edge="1" parent="1" source="12" target="13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="203" value="4. SELECT Rating WHERE UserId+MovieId" style="endArrow=open;endFill=0;html=1;strokeWidth=2;" edge="1" parent="1" source="13" target="14">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="204" value="5. Rating (or null)" style="endArrow=open;endFill=0;html=1;strokeWidth=2;" edge="1" parent="1" source="14" target="13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="205" value="6. Insert/Update Rating" style="endArrow=open;endFill=0;html=1;strokeWidth=2;" edge="1" parent="1" source="12" target="13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="206" value="7. SAVE changes" style="endArrow=open;endFill=0;html=1;strokeWidth=2;" edge="1" parent="1" source="13" target="14">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="207" value="8. Recalculate average rating" style="endArrow=open;endFill=0;html=1;strokeWidth=2;" edge="1" parent="1" source="12" target="14">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="208" value="9. New average + count" style="endArrow=open;endFill=0;html=1;strokeWidth=2;" edge="1" parent="1" source="14" target="12">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="209" value="10. Success result" style="endArrow=open;endFill=0;html=1;strokeWidth=2;" edge="1" parent="1" source="12" target="11">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="210" value="11. Redirect to Movie Details (updated)" style="endArrow=open;endFill=0;html=1;strokeWidth=2;" edge="1" parent="1" source="11" target="10">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

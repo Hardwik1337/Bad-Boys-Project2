@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<mxfile host="app.diagrams.net" modified="2026-02-25T00:00:00.000Z" agent="python-generated" version="22.1.0" type="device">
+  <diagram name="MovieHub — Entity (ER) Diagram">
+    <mxGraphModel dx="1220" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="10" value="&lt;b&gt;User&lt;/b&gt;&lt;br/&gt;Id (PK)&lt;br/&gt;Email&lt;br/&gt;UserName&lt;br/&gt;DisplayName" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f5f5f5;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="250" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;Movie&lt;/b&gt;&lt;br/&gt;Id (PK)&lt;br/&gt;Title&lt;br/&gt;Year&lt;br/&gt;AverageRating*" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f5f5f5;" vertex="1" parent="1">
+          <mxGeometry x="420" y="60" width="260" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="&lt;b&gt;Genre&lt;/b&gt;&lt;br/&gt;Id (PK)&lt;br/&gt;Name (Unique)" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f5f5f5;" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="250" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="&lt;b&gt;MovieGenre&lt;/b&gt;&lt;br/&gt;MovieId (FK)&lt;br/&gt;GenreId (FK)&lt;br/&gt;(PK: MovieId+GenreId)" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f5f5f5;" vertex="1" parent="1">
+          <mxGeometry x="710" y="210" width="360" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;Rating&lt;/b&gt;&lt;br/&gt;Id (PK)&lt;br/&gt;UserId (FK)&lt;br/&gt;MovieId (FK)&lt;br/&gt;Value (1..10)&lt;br/&gt;(Unique: UserId+MovieId)" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f5f5f5;" vertex="1" parent="1">
+          <mxGeometry x="180" y="260" width="360" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="&lt;b&gt;Review&lt;/b&gt;&lt;br/&gt;Id (PK)&lt;br/&gt;UserId (FK)&lt;br/&gt;MovieId (FK)&lt;br/&gt;Text&lt;br/&gt;IsHidden" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f5f5f5;" vertex="1" parent="1">
+          <mxGeometry x="180" y="460" width="340" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="&lt;b&gt;Provider&lt;/b&gt;&lt;br/&gt;Id (PK)&lt;br/&gt;Name (Unique)&lt;br/&gt;HomeUrl" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f5f5f5;" vertex="1" parent="1">
+          <mxGeometry x="820" y="420" width="250" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="&lt;b&gt;MovieProviderLink&lt;/b&gt;&lt;br/&gt;Id (PK)&lt;br/&gt;MovieId (FK)&lt;br/&gt;ProviderId (FK)&lt;br/&gt;Url&lt;br/&gt;IsActive" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f5f5f5;" vertex="1" parent="1">
+          <mxGeometry x="620" y="420" width="360" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="&lt;b&gt;UserMovieListItem&lt;/b&gt;&lt;br/&gt;Id (PK)&lt;br/&gt;UserId (FK)&lt;br/&gt;MovieId (FK)&lt;br/&gt;Status" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f5f5f5;" vertex="1" parent="1">
+          <mxGeometry x="60" y="640" width="320" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="&lt;b&gt;RedirectLog&lt;/b&gt;&lt;br/&gt;Id (PK)&lt;br/&gt;UserId (FK, nullable)&lt;br/&gt;MovieId (FK)&lt;br/&gt;ProviderId (FK)&lt;br/&gt;CreatedAt" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f5f5f5;" vertex="1" parent="1">
+          <mxGeometry x="430" y="640" width="400" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="99" value="Notes:
+• * AverageRating is derived.
+• FKs shown for clarity.
+• Unique constraints are part of validation." style="shape=note;whiteSpace=wrap;html=1;size=18;fillColor=#fff2cc;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="820" y="610" width="320" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="100" value="1..*" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="10" target="14">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="101" value="1..*" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="11" target="14">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="102" value="1..*" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="10" target="15">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="103" value="1..*" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="11" target="15">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="104" value="1..*" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="11" target="13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="105" value="1..*" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="12" target="13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="106" value="1..*" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="16" target="17">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="107" value="1..*" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="11" target="17">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="108" value="1..*" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="10" target="18">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="109" value="1..*" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="11" target="18">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="110" value="0..*" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="10" target="19">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="111" value="1..*" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="11" target="19">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="112" value="1..*" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="16" target="19">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
