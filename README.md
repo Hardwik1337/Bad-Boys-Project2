@@ -1,10 +1,11 @@
 # Bad-Boys-Project2
-Tonizzo Simoe, Pryadko Andrii & Syrota Denys Project
+Тоніццо Сімоне, Прядко Андрій & Сирота Денис
+Проєкт: MovieHub – система оцінювання фільмів
 
-MovieHub - Movie Rating & Official Streaming Links
+MovieHub — це веб‑застосунок, створений з використанням ASP.NET Core MVC, який дозволяє користувачам переглядати каталог фільмів, ставити оцінки та залишати відгуки.
 
+Користувачі можуть переглядати інформацію про фільми, формувати власні списки та взаємодіяти з контентом через систему рейтингів і коментарів.
 
-MovieHub is a web application built with ASP .NET Core MVC that allows users to browse a movie catalog, add movies to personal lists (Watchlist, Watched, Favorites), rate movies, and write reviews.
-Each movie page contains a “Watch Officially” section with links to legal streaming platforms (e.g., Netflix, MEGOGO, Prime Video), and the system redirects users to the selected provider.
-Administrators and moderators manage the catalog, genres, and streaming links, and moderate user-generated reviews.
-The system uses Entity Framework Core with a relational database (e.g., SQL Server) and ASP .NET Identity for authentication and role-based authorization, plus logging and automated tests.
+Адміністратори та модератори керують каталогом фільмів і контролюють контент користувачів.
+
+Система використовує Entity Framework Core для роботи з базою даних та ASP.NET Identity для автентифікації користувачів і керування ролями.
