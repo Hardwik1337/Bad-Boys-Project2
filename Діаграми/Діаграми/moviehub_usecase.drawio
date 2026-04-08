@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- Background -->
+    <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=none;" vertex="1" parent="1">
+      <mxGeometry x="0" y="0" width="1654" height="1169" as="geometry" />
+    </mxCell>
+
+    <!-- System boundary -->
+    <mxCell id="sys" value="Система MovieHub" style="text;html=1;strokeColor=#ffffff;fillColor=none;align=center;verticalAlign=top;spacingTop=4;fontSize=16;fontColor=#ffffff;fontStyle=1;perimeter=rectanglePerimeter;whiteSpace=wrap;" vertex="1" parent="1">
+      <mxGeometry x="220" y="40" width="1000" height="1060" as="geometry" />
+    </mxCell>
+
+    <!-- ══════════ SECTION: Гість ══════════ -->
+    <mxCell id="sec_guest_line" value="" style="line;strokeColor=#555555;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="220" y="100" width="1000" height="10" as="geometry" />
+    </mxCell>
+    <mxCell id="sec_guest_lbl" value="Гість" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontColor=#888888;" vertex="1" parent="1">
+      <mxGeometry x="660" y="103" width="120" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Перегляд інформації про фільм -->
+    <mxCell id="uc_g1" value="Перегляд інформації про фільм" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="340" y="140" width="260" height="60" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Реєстрація -->
+    <mxCell id="uc_g2" value="Реєстрація" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="800" y="130" width="200" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Вхід у систему -->
+    <mxCell id="uc_g3" value="Вхід у систему" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="800" y="220" width="200" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- include: Реєстрація → Вхід у систему -->
+    <mxCell id="inc1" value="«include»" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;fontColor=#aaaaaa;fontSize=11;dashed=1;endArrow=open;endFill=0;" edge="1" source="uc_g2" target="uc_g3" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ══════════ SECTION: Користувач ══════════ -->
+    <mxCell id="sec_user_line" value="" style="line;strokeColor=#555555;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="220" y="330" width="1000" height="10" as="geometry" />
+    </mxCell>
+    <mxCell id="sec_user_lbl" value="Користувач" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontColor=#888888;" vertex="1" parent="1">
+      <mxGeometry x="620" y="333" width="200" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Оцінити фільм -->
+    <mxCell id="uc_u1" value="Оцінити фільм" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="340" y="370" width="200" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Написати відгук -->
+    <mxCell id="uc_u2" value="Написати відгук" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="340" y="450" width="200" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Редагувати відгук -->
+    <mxCell id="uc_u3" value="Редагувати відгук" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="340" y="530" width="200" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Видалити відгук -->
+    <mxCell id="uc_u4" value="Видалити відгук" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="340" y="610" width="200" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Додати у Watchlist -->
+    <mxCell id="uc_u5" value="Додати у Watchlist" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="800" y="370" width="200" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Видалити з Watchlist -->
+    <mxCell id="uc_u6" value="Видалити з Watchlist" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="800" y="450" width="200" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Вихід із системи -->
+    <mxCell id="uc_u7" value="Вихід із системи" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="800" y="530" width="200" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- Extends: Написати відгук → Редагувати відгук -->
+    <mxCell id="ext1" value="Extends" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;fontColor=#aaaaaa;fontSize=11;dashed=1;endArrow=open;endFill=0;" edge="1" source="uc_u2" target="uc_u3" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Extends: Написати відгук → Видалити відгук -->
+    <mxCell id="ext2" value="Extends" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;fontColor=#aaaaaa;fontSize=11;dashed=1;endArrow=open;endFill=0;" edge="1" source="uc_u2" target="uc_u4" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ══════════ SECTION: Модератор / Адміністратор ══════════ -->
+    <mxCell id="sec_mod_line" value="" style="line;strokeColor=#555555;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="220" y="700" width="1000" height="10" as="geometry" />
+    </mxCell>
+    <mxCell id="sec_mod_lbl" value="Модератор / Адміністратор" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontColor=#888888;" vertex="1" parent="1">
+      <mxGeometry x="560" y="703" width="320" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Перегляд усіх відгуків -->
+    <mxCell id="uc_m1" value="Перегляд усіх відгуків" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="330" y="740" width="220" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Видалити / редагувати відгук -->
+    <mxCell id="uc_m2" value="Видалити / редагувати відгук" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="310" y="820" width="260" height="60" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Видалити фільм -->
+    <mxCell id="uc_m3" value="Видалити фільм" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="340" y="910" width="200" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Керування фільмами -->
+    <mxCell id="uc_a1" value="Керування фільмами" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="790" y="740" width="220" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Керування жанрами -->
+    <mxCell id="uc_a2" value="Керування жанрами" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="790" y="820" width="220" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Керування користувачами -->
+    <mxCell id="uc_a3" value="Керування користувачами" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="790" y="900" width="220" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- UC: Зміна ролей -->
+    <mxCell id="uc_a4" value="Зміна ролей" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="790" y="980" width="220" height="55" as="geometry" />
+    </mxCell>
+
+    <!-- ══════════ АКТОРИ ══════════ -->
+
+    <!-- Actor: Гість -->
+    <mxCell id="actor_guest" value="Гість" style="shape=mxgraph.flowchart.start_2;fillColor=#ffffff;strokeColor=#ffffff;fontColor=#ffffff;fontSize=14;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;perimeter=ellipsePerimeter;" vertex="1" parent="1">
+      <mxGeometry x="90" y="155" width="40" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Actor: Користувач -->
+    <mxCell id="actor_user" value="Користувач" style="shape=mxgraph.flowchart.start_2;fillColor=#ffffff;strokeColor=#ffffff;fontColor=#ffffff;fontSize=14;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;perimeter=ellipsePerimeter;" vertex="1" parent="1">
+      <mxGeometry x="90" y="470" width="40" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Actor: Модератор -->
+    <mxCell id="actor_mod" value="Модератор" style="shape=mxgraph.flowchart.start_2;fillColor=#ffffff;strokeColor=#ffffff;fontColor=#ffffff;fontSize=14;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;perimeter=ellipsePerimeter;" vertex="1" parent="1">
+      <mxGeometry x="90" y="840" width="40" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Actor: Адміністратор -->
+    <mxCell id="actor_admin" value="Адміністратор" style="shape=mxgraph.flowchart.start_2;fillColor=#ffffff;strokeColor=#ffffff;fontColor=#ffffff;fontSize=14;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;perimeter=ellipsePerimeter;" vertex="1" parent="1">
+      <mxGeometry x="1270" y="840" width="40" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Inheritance: Гість → Користувач -->
+    <mxCell id="inh1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=open;endFill=0;" edge="1" source="actor_guest" target="actor_user" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ══════════ З'ЄДНАННЯ: Гість → use cases ══════════ -->
+    <mxCell id="e_g_uc1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_guest" target="uc_g1" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e_g_uc2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_guest" target="uc_g2" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e_g_uc3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_guest" target="uc_g3" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ══════════ З'ЄДНАННЯ: Користувач → use cases ══════════ -->
+    <mxCell id="e_u_uc1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_user" target="uc_u1" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e_u_uc2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_user" target="uc_u2" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e_u_uc3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_user" target="uc_u3" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e_u_uc4" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_user" target="uc_u4" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e_u_uc5" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_user" target="uc_u5" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e_u_uc6" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_user" target="uc_u6" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e_u_uc7" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_user" target="uc_u7" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ══════════ З'ЄДНАННЯ: Модератор → use cases ══════════ -->
+    <mxCell id="e_m_uc1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_mod" target="uc_m1" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e_m_uc2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_mod" target="uc_m2" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e_m_uc3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_mod" target="uc_m3" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ══════════ З'ЄДНАННЯ: Адміністратор → use cases ══════════ -->
+    <mxCell id="e_a_uc1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_admin" target="uc_a1" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e_a_uc2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_admin" target="uc_a2" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e_a_uc3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_admin" target="uc_a3" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e_a_uc4" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;endArrow=none;" edge="1" source="actor_admin" target="uc_a4" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>
