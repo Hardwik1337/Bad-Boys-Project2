@@ -28,5 +28,10 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </Content>
   </ItemGroup>
+<ItemGroup>
+  <Compile Remove="MovieHub.E2ETests\**\*.cs" />
+  <EmbeddedResource Remove="MovieHub.E2ETests\**\*" />
+  <None Remove="MovieHub.E2ETests\**\*" />
+</ItemGroup>
 
 </Project>
