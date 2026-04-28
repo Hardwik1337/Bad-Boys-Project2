@@ -1,0 +1,227 @@
+@model MovieHub.Controllers.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Панель керування";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="mb-1">Панель керування</h1>
+        <p class="text-muted mb-0">
+            @if (User.IsInRole("Admin"))
+            {
+                <span>Роль: Адміністратор</span>
+            }
+            else if (User.IsInRole("Moderator"))
+            {
+                <span>Роль: Модератор</span>
+            }
+        </p>
+    </div>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-6 col-lg-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h6 class="text-muted">Фільми</h6>
+                <h2>@Model.MoviesCount</h2>
+                <a asp-controller="Movies" asp-action="Index" class="btn btn-sm btn-outline-primary">Перейти</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h6 class="text-muted">Відгуки</h6>
+                <h2>@Model.ReviewsCount</h2>
+                <a asp-controller="Reviews" asp-action="Index" class="btn btn-sm btn-outline-primary">Перейти</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h6 class="text-muted">Оцінки</h6>
+                <h2>@Model.RatingsCount</h2>
+                <a asp-controller="Ratings" asp-action="Index" class="btn btn-sm btn-outline-primary">Перейти</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h6 class="text-muted">Watchlists</h6>
+                <h2>@Model.WatchlistsCount</h2>
+                <a asp-controller="Watchlists" asp-action="Index" class="btn btn-sm btn-outline-primary">Перейти</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="text-muted">Жанри</h6>
+                    <h2>@Model.GenresCount</h2>
+                    <a asp-controller="Genres" asp-action="Index" class="btn btn-sm btn-outline-dark">Керувати жанрами</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="text-muted">Стрімінги</h6>
+                    <h2>@Model.StreamingProvidersCount</h2>
+                    <a asp-controller="StreamingProviders" asp-action="Index" class="btn btn-sm btn-outline-dark">Керувати сервісами</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="text-muted">Користувачі</h6>
+                    <h2>@Model.UsersCount</h2>
+                    <span class="btn btn-sm btn-outline-secondary disabled">Адмін-інформація</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row g-4">
+    <div class="col-lg-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white">
+                <strong>Останні фільми</strong>
+            </div>
+            <div class="card-body">
+                @if (!Model.LatestMovies.Any())
+                {
+                    <div class="alert alert-info mb-0">Ще немає фільмів.</div>
+                }
+                else
+                {
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Назва</th>
+                                <th>Жанр</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var movie in Model.LatestMovies)
+                        {
+                            <tr>
+                                <td>@movie.Title</td>
+                                <td>@movie.Genre?.Name</td>
+                                <td>
+                                    <a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.Id">Деталі</a>
+                                    @if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+                                    {
+                                        <text> | </text>
+                                        <a asp-controller="Movies" asp-action="Edit" asp-route-id="@movie.Id">Редагувати</a>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+
+                @if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+                {
+                    <a asp-controller="Movies" asp-action="Create" class="btn btn-primary btn-sm">Додати фільм</a>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white">
+                <strong>Останні відгуки</strong>
+            </div>
+            <div class="card-body">
+                @if (!Model.LatestReviews.Any())
+                {
+                    <div class="alert alert-info mb-0">Ще немає відгуків.</div>
+                }
+                else
+                {
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Фільм</th>
+                                <th>Користувач</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var review in Model.LatestReviews)
+                        {
+                            <tr>
+                                <td>@review.Movie?.Title</td>
+                                <td>@review.User?.UserName</td>
+                                <td>
+                                    <a asp-controller="Reviews" asp-action="Details" asp-route-id="@review.Id">Деталі</a>
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="row mt-4">
+        <div class="col-lg-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-white">
+                    <strong>Останні користувачі</strong>
+                </div>
+                <div class="card-body">
+                    @if (!Model.LatestUsers.Any())
+                    {
+                        <div class="alert alert-info mb-0">Користувачів поки немає.</div>
+                    }
+                    else
+                    {
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Ім'я</th>
+                                    <th>Email</th>
+                                    <th>Логін</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var user in Model.LatestUsers)
+                            {
+                                <tr>
+                                    <td>@user.FullName</td>
+                                    <td>@user.Email</td>
+                                    <td>@user.UserName</td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}

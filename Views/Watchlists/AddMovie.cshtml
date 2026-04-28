@@ -1,0 +1,34 @@
+@using Microsoft.AspNetCore.Mvc.Rendering
+@{
+    ViewData["Title"] = "Додати фільм до списку";
+    var movie = ViewBag.Movie as MovieHub.Models.Movie;
+}
+
+<h1>Додати фільм до Watchlist</h1>
+
+@if (movie == null)
+{
+    <div class="alert alert-danger">Фільм не знайдено.</div>
+}
+else
+{
+    <div class="card mb-3">
+        <div class="card-body">
+            <h4>@movie.Title</h4>
+            <p>@movie.Description</p>
+        </div>
+    </div>
+
+    <form asp-action="AddMovie" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="movieId" value="@movie.Id" />
+
+        <div class="mb-3">
+            <label class="form-label">Оберіть список</label>
+            <select name="watchlistId" class="form-select" asp-items="ViewBag.Watchlists"></select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Додати</button>
+        <a asp-controller="Movies" asp-action="Index" class="btn btn-secondary">Назад</a>
+    </form>
+}

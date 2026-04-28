@@ -1,0 +1,20 @@
+@model MovieHub.Models.Watchlist
+
+@{
+    ViewData["Title"] = "Видалити список";
+}
+
+<h1>Видалити список</h1>
+
+<div class="alert alert-warning">
+    Ви впевнені, що хочете видалити список <strong>@Model.Name</strong>?
+</div>
+
+<p>Фільмів у списку: <strong>@Model.Items.Count</strong></p>
+
+<form asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Видалити</button>
+    <a asp-action="Index" class="btn btn-secondary">Скасувати</a>
+</form>

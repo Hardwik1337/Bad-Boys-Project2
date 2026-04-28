@@ -1,0 +1,23 @@
+@model MovieHub.Models.Genre
+
+@{
+    ViewData["Title"] = "Видалити жанр";
+}
+
+<h1>Видалити жанр</h1>
+
+<h3>Ти впевнений, що хочеш видалити це?</h3>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Назва</dt>
+        <dd class="col-sm-10">@Model.Name</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Видалити</button>
+        <a asp-action="Index" class="btn btn-secondary">Назад</a>
+    </form>
+</div>

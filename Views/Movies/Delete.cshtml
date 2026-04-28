@@ -1,0 +1,32 @@
+@model MovieHub.Models.Movie
+
+@{
+    ViewData["Title"] = "Видалити фільм";
+}
+
+<h1>Видалити фільм</h1>
+
+<h3>Ти впевнений, що хочеш видалити це?</h3>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Назва</dt>
+        <dd class="col-sm-10">@Model.Title</dd>
+
+        <dt class="col-sm-2">Опис</dt>
+        <dd class="col-sm-10">@Model.Description</dd>
+
+        <dt class="col-sm-2">Рік</dt>
+        <dd class="col-sm-10">@Model.ReleaseYear</dd>
+
+        <dt class="col-sm-2">Жанр</dt>
+        <dd class="col-sm-10">@Model.Genre?.Name</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Видалити</button>
+        <a asp-action="Index" class="btn btn-secondary">Назад</a>
+    </form>
+</div>

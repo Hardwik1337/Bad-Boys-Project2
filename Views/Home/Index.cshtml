@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Головна";
+}
+
+<div class="hero-box text-center">
+    <h1>🎬 MovieHub</h1>
+    <p class="mb-4">
+        Система для перегляду фільмів, відгуків, оцінок, watchlist та персональної колекції користувача.
+    </p>
+
+    @if (User.Identity != null && User.Identity.IsAuthenticated)
+    {
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a asp-controller="Movies" asp-action="Index" class="btn btn-primary btn-lg">Перейти до фільмів</a>
+            <a asp-controller="UserMovies" asp-action="Index" class="btn btn-success btn-lg">Моя колекція</a>
+        </div>
+    }
+    else
+    {
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a asp-controller="Account" asp-action="Register" class="btn btn-primary btn-lg">Зареєструватися</a>
+            <a asp-controller="Account" asp-action="Login" class="btn btn-success btn-lg">Увійти</a>
+        </div>
+    }
+</div>
+
+<div class="row mt-5 g-4">
+    <div class="col-md-4">
+        <div class="card h-100 p-3">
+            <div class="card-body">
+                <h4 class="card-title">Фільми</h4>
+                <p>Переглядай каталог фільмів із загальної бази даних.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 p-3">
+            <div class="card-body">
+                <h4 class="card-title">Відгуки та оцінки</h4>
+                <p>Залишай власні відгуки та виставляй оцінки тільки зі свого акаунта.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 p-3">
+            <div class="card-body">
+                <h4 class="card-title">Моя колекція</h4>
+                <p>Додавай фільми з головного каталогу у власну персональну базу.</p>
+            </div>
+        </div>
+    </div>
+</div>

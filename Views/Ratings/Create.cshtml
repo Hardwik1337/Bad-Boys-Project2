@@ -1,0 +1,25 @@
+@model MovieHub.Models.Rating
+
+@{
+    ViewData["Title"] = "Створити оцінку";
+}
+
+<h1>Створити оцінку</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Score" class="control-label">Оцінка</label>
+        <input asp-for="Score" class="form-control" />
+        <span asp-validation-for="Score" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MovieId" class="control-label">Фільм</label>
+        <select asp-for="MovieId" class="form-control" asp-items="ViewBag.MovieId"></select>
+        <span asp-validation-for="MovieId" class="text-danger"></span>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Створити</button>
+    <a asp-action="Index" class="btn btn-secondary">Назад</a>
+</form>

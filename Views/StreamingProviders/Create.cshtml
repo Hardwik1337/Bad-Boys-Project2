@@ -1,0 +1,25 @@
+@model MovieHub.Models.StreamingProvider
+
+@{
+    ViewData["Title"] = "Додати сервіс";
+}
+
+<h1>Додати сервіс</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Назва</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Url" class="control-label">Посилання</label>
+        <input asp-for="Url" class="form-control" />
+        <span asp-validation-for="Url" class="text-danger"></span>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Створити</button>
+    <a asp-action="Index" class="btn btn-secondary">Назад</a>
+</form>
