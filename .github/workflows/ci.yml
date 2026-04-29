@@ -31,4 +31,4 @@ jobs:
         run: pwsh src/MovieHub.E2ETests/bin/Release/net10.0/playwright.ps1 install --with-deps
 
       - name: Test
-        run: dotnet test src/MovieHub.sln --configuration Release --no-build
+        run: dotnet test src/MovieHub.Tests/MovieHub.Tests.csproj --configuration Release --no-build
