@@ -16,9 +16,18 @@ namespace MovieHub.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? searchString = null)
         {
-            return View(await _context.Genres.ToListAsync());
+            var genres = _context.Genres.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(searchString))
+            {
+                genres = genres.Where(g => g.Name.Contains(searchString));
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+
+            return View(await genres.ToListAsync());
         }
 
         public async Task<IActionResult> Details(int? id)
@@ -26,6 +35,7 @@ namespace MovieHub.Controllers
             if (id == null) return NotFound();
 
             var genre = await _context.Genres.FirstOrDefaultAsync(g => g.Id == id);
+
             if (genre == null) return NotFound();
 
             return View(genre);
@@ -45,6 +55,7 @@ namespace MovieHub.Controllers
 
             _context.Add(genre);
             await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
 
@@ -53,6 +64,7 @@ namespace MovieHub.Controllers
             if (id == null) return NotFound();
 
             var genre = await _context.Genres.FindAsync(id);
+
             if (genre == null) return NotFound();
 
             return View(genre);
@@ -88,6 +100,7 @@ namespace MovieHub.Controllers
             if (id == null) return NotFound();
 
             var genre = await _context.Genres.FirstOrDefaultAsync(g => g.Id == id);
+
             if (genre == null) return NotFound();
 
             return View(genre);
@@ -98,6 +111,7 @@ namespace MovieHub.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var genre = await _context.Genres.FindAsync(id);
+
             if (genre != null)
             {
                 _context.Genres.Remove(genre);
