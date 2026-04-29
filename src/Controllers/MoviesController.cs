@@ -17,9 +17,19 @@ namespace MovieHub.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? searchString = null)
         {
-            var movies = _context.Movies.Include(m => m.Genre);
+            var movies = _context.Movies
+                .Include(m => m.Genre)
+                .AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(searchString))
+            {
+                movies = movies.Where(m => m.Title.Contains(searchString));
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+
             return View(await movies.ToListAsync());
         }
 
@@ -58,6 +68,7 @@ namespace MovieHub.Controllers
             _context.Add(movie);
             await _context.SaveChangesAsync();
             TempData["SuccessMessage"] = "Фільм успішно створено";
+
             return RedirectToAction(nameof(Index));
         }
 
@@ -67,6 +78,7 @@ namespace MovieHub.Controllers
             if (id == null) return NotFound();
 
             var movie = await _context.Movies.FindAsync(id);
+
             if (movie == null) return NotFound();
 
             ViewData["GenreId"] = new SelectList(_context.Genres, "Id", "Name", movie.GenreId);
@@ -91,12 +103,10 @@ namespace MovieHub.Controllers
                 _context.Update(movie);
                 await _context.SaveChangesAsync();
                 TempData["SuccessMessage"] = "Фільм успішно оновлено";
-                
             }
             catch (DbUpdateConcurrencyException)
             {
                 if (!_context.Movies.Any(e => e.Id == movie.Id))
-
                     return NotFound();
 
                 throw;
@@ -125,6 +135,7 @@ namespace MovieHub.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var movie = await _context.Movies.FindAsync(id);
+
             if (movie != null)
             {
                 _context.Movies.Remove(movie);
