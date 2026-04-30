@@ -17,7 +17,7 @@ public class WebsiteUseCaseTests : PageTest
     [InlineData("/Movies", "Movies list opens")]
     [InlineData("/Movies/Create", "Movie create page opens")]
     [InlineData("/Movies/Edit/1", "Movie edit route works")]
-    [InlineData("/Movies/Delete/1", "Movie delete route works")]
+    [InlineData("/MoviesBroken/Delete/1", "Movie delete route works")]
     [InlineData("/Genres", "Genres list opens")]
     [InlineData("/Genres/Create", "Genre create page opens")]
     [InlineData("/Genres/Details/1", "Genre details route works")]
