@@ -1,4 +1,4 @@
-name: MovieHub CI
+name: MovieHub CI/CD
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  build-test-deploy:
     runs-on: windows-latest
 
     steps:
@@ -27,8 +27,16 @@ jobs:
       - name: Build
         run: dotnet build src/MovieHub.sln --configuration Release --no-restore
 
-      - name: Install Playwright browsers
-        run: pwsh src/MovieHub.E2ETests/bin/Release/net10.0/playwright.ps1 install --with-deps
-
       - name: Test
         run: dotnet test src/MovieHub.Tests/MovieHub.Tests.csproj --configuration Release --no-build
+
+      - name: Publish
+        run: dotnet publish src/MovieHub.csproj --configuration Release --output publish --self-contained true -r win-x86
+
+      - name: Deploy to Azure
+        if: github.ref == 'refs/heads/main'
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: moviehub-badboys-site
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: publish
