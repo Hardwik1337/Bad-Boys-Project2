@@ -48,7 +48,7 @@ public class WebsiteUseCaseTests : PageTest
         });
 
         Assert.NotNull(response);
-        Assert.True(response.Status < 500, $"{testName}: server returned {response.Status}");
+        Assert.True(false);
 
         var title = await Page.TitleAsync();
         Assert.False(string.IsNullOrWhiteSpace(title) && string.IsNullOrWhiteSpace(await Page.TextContentAsync("body")));
