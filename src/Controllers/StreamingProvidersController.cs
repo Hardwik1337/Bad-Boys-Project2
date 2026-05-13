@@ -16,10 +16,19 @@ namespace MovieHub.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.StreamingProviders.ToListAsync());
-        }
+       public async Task<IActionResult> Index(string? searchString = null)
+{
+    var providers = _context.StreamingProviders.AsQueryable();
+
+    if (!string.IsNullOrWhiteSpace(searchString))
+    {
+        providers = providers.Where(p => p.Name.Contains(searchString));
+    }
+
+    ViewData["CurrentFilter"] = searchString;
+
+    return View(await providers.ToListAsync());
+}
 
         public async Task<IActionResult> Details(int? id)
         {

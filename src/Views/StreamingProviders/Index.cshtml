@@ -5,6 +5,18 @@
 }
 
 <h1>Стрімінги</h1>
+<form asp-action="Index" method="get" class="mb-4">
+    <div class="input-group">
+        <input type="text"
+               name="searchString"
+               value="@ViewData["CurrentFilter"]"
+               placeholder="Пошук стрімінгу за назвою"
+               class="form-control" />
+
+        <button type="submit" class="btn btn-primary">Пошук</button>
+        <a asp-action="Index" class="btn btn-secondary">Очистити</a>
+    </div>
+</form>
 
 <p>
     <a asp-action="Create" class="btn btn-primary">Додати сервіс</a>
